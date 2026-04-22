@@ -6,13 +6,11 @@ import json
 import datetime as dt
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
+import os
 
 # Load data
-output_dir = 'Results/Figures'
-
-# Check if output directory exists, if not create it
-if not os.path.exists(output_dir):
-    os.makedirs(output_dir) 
+output_dir = 'results/figures/'
 
 data_f = open('data/data.json', 'r')
 raw = json.load(data_f)
@@ -78,7 +76,7 @@ ax2.legend()
 ax2.spines['top'].set_visible(False)
 ax2.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig('results/figures/fig_duration_distribution.png', dpi=150)
+plt.savefig(os.path.join(output_dir, 'fig_duration_distribution.png'), dpi=150)
 plt.close()
 
 # --------------------------------------------------
@@ -109,7 +107,7 @@ ax3.spines['right'].set_visible(False)
 ax3.set_xlabel('Total Duration (Hours)', fontsize=10)
 ax3.set_ylabel('Astronaut', fontsize=10)
 plt.tight_layout()
-plt.savefig('results/figures/fig_top_astronauts.png', dpi=150)
+plt.savefig(os.path.join(output_dir, 'fig_duration.png'), dpi=150)
 plt.close()
 
 print("Python figures generated.")
