@@ -63,6 +63,7 @@ plt.close()
 # Figure 2: EVA duration distribution by country
 # --------------------------------------------------
 
+
 df_dist = df.copy()
 df_dist['duration_hrs'] = df_dist['duration'].apply(parseDuration)
 df_dist = df_dist.dropna(subset=['duration_hrs', 'country'])
