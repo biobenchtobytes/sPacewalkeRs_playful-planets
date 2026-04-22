@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
 import numpy as np
+import os
 
 # Load data
 output_dir = 'results/figures/'
@@ -55,7 +56,7 @@ ax1.plot(df_dur['date'], df_dur['cumulative_hrs'], color='black', linewidth=1.5)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig('results/figures/fig_cumulative_hours.png', dpi=150)
+plt.savefig((os.path.join(output_dir, 'fig_cumulative_hours.png'), dpi=150)
 plt.close()
 
 # --------------------------------------------------
