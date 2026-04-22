@@ -1,12 +1,10 @@
 # NASA Spacewalk Analysis — Python
 # https://data.nasa.gov/resource/eva.json (with modifications)
 # Generates three figures for the manuscript
-
+import os
 import json
-import csv
 import datetime as dt
 import matplotlib.pyplot as plt
-import matplotlib
 import pandas as pd
 import numpy as np
 import os
@@ -38,8 +36,8 @@ def parseDuration(d):
 
 # df['duration_hrs'] = df['duration'].apply(parseDuration)
 
-colour_usa = '#e41a1c'
-colour_russia = '#4daf4a'
+colour_usa = '#377eb8'
+colour_russia = '#ff7f00'
 
 # --------------------------------------------------
 # Figure 1: Cumulative EVA hours over time
@@ -56,7 +54,7 @@ ax1.plot(df_dur['date'], df_dur['cumulative_hrs'], color='black', linewidth=1.5)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig(os.path.join(output_dir, 'fig_cumulative_hours.png'), dpi=150)
+plt.savefig('Results/Figures/fig_cumulative_hours.png', dpi=150)
 plt.close()
 
 # --------------------------------------------------
@@ -106,6 +104,8 @@ fig3, ax3 = plt.subplots(figsize=(8, 5))
 ax3.barh(df_astro['astronaut'], df_astro['duration_hrs'], color=colour_usa)
 ax3.spines['top'].set_visible(False)
 ax3.spines['right'].set_visible(False)
+ax3.set_xlabel('Total Duration (Hours)', fontsize=10)
+ax3.set_ylabel('Astronaut', fontsize=10)
 plt.tight_layout()
 plt.savefig(os.path.join(output_dir, 'fig_duration.png'), dpi=150)
 plt.close()
