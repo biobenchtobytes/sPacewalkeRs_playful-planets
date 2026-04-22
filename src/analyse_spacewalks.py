@@ -7,6 +7,7 @@ import datetime as dt
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 # Load data
 output_dir = 'results/figures'
 
