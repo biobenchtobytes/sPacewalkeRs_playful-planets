@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Load data
-output_dir = 'Results/Figures'
+output_dir = 'results/figures'
 
 # Check if output directory exists, if not create it
 if not os.path.exists(output_dir):
@@ -56,7 +56,7 @@ ax1.plot(df_dur['date'], df_dur['cumulative_hrs'], color='black', linewidth=1.5)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig('Results/Figures/fig_cumulative_hours.png', dpi=150)
+plt.savefig('results/figures/fig_cumulative_hours.png', dpi=150)
 plt.close()
 
 # --------------------------------------------------
