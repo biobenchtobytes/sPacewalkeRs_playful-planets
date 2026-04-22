@@ -56,7 +56,7 @@ ax1.plot(df_dur['date'], df_dur['cumulative_hrs'], color='black', linewidth=1.5)
 ax1.spines['top'].set_visible(False)
 ax1.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig('results/figures/fig_cumulative_hours.png', dpi=150)
+plt.savefig(f'{output_dir}/fig_cumulative_hours.png', dpi=150)
 plt.close()
 
 # --------------------------------------------------
@@ -78,7 +78,7 @@ ax2.legend()
 ax2.spines['top'].set_visible(False)
 ax2.spines['right'].set_visible(False)
 plt.tight_layout()
-plt.savefig('results/figures/fig_duration_distribution.png', dpi=150)
+plt.savefig(f'{output_dir}/fig_duration_distribution.png', dpi=150)
 plt.close()
 
 # --------------------------------------------------
@@ -109,7 +109,7 @@ ax3.spines['right'].set_visible(False)
 ax3.set_xlabel('Total Duration (Hours)', fontsize=10)
 ax3.set_ylabel('Astronaut', fontsize=10)
 plt.tight_layout()
-plt.savefig('results/figures/fig_top_astronauts.png', dpi=150)
+plt.savefig(f'{output_dir}/results/figures/fig_top_astronauts.png', dpi=150)
 plt.close()
 
 print("Python figures generated.")
